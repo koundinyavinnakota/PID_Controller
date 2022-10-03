@@ -1,4 +1,4 @@
-# PID_Controller_Pair_1
+# PID_Controller
 ---
 - Driver : Koundinya Vinnakota
 - Navigator : Mayank Sharma
