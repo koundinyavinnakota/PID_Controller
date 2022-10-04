@@ -25,14 +25,22 @@ cmake ..
 make
 Run program: ./app/PID
 ```
+
 ## Steps to generate LCOV report
 ```
 cd <project_directory>
 mkdir build
+=======
+
+## Steps to Run Code Coverage 
+```
 cd build
 cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug ../
 make
 make code_coverage
+```
+=======
+firefox ./coverage/index.html
 ```
 ## Class Diagram 
 ![Class Diagram](Class_diagram.png "Class Diagram")
