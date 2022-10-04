@@ -79,10 +79,12 @@ class PID {
      * @param position 
      * @return auto 
      */
-    double ComputeVelocity(int position);
+    double ComputeVelocity(double process_value, double set_point);
     /**
      * @brief This fucntions validates the inputed parameters
      * 
+     * @param process_value The initial value for the PID controller
+     * @param set_point The value we need from the controller
      */
     void CheckParams();
 };

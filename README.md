@@ -1,19 +1,24 @@
 # PID_Controller
+- A program that uses PID controller to control output velocity.
 ---
+Part - 1:
 - Driver : Koundinya Vinnakota
 - Navigator : Mayank Sharma
+
+Part - 2:
+- Driver : Aneesh Chodisetty
+- Navigator: Aniruddh Balram
 
 ## Dependencies
 - C++ 
 - CMake
 - googletest
-- Travis CI
-- Coverals
+- lcov
 - cpplint
 - cppcheck
 ## Steps to run the project
 ```
-cd Pair_1_PID
+cd <project_directory>
 mkdir build
 cd build
 cmake ..
@@ -21,14 +26,21 @@ make
 Run program: ./app/PID
 ```
 
+## Steps to generate LCOV report
+```
+cd <project_directory>
+mkdir build
+=======
+
 ## Steps to Run Code Coverage 
 ```
 cd build
 cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug ../
 make
 make code_coverage
+```
+=======
 firefox ./coverage/index.html
 ```
-
 ## Class Diagram 
 ![Class Diagram](Class_diagram.png "Class Diagram")

@@ -34,8 +34,21 @@ double PID::CalculateCummulativeError(double cum_error) {
 double PID::ErrorDerivativeCalculation(double error) {
     return ( (error - old_error) / dt);
 }
-double PID::ComputeVelocity(int position) {
-    return 10;
+double PID::ComputeVelocity(double process_value, double set_point) {
+    
+    // Calculating the error
+    double current_error = set_point - process_value;
+
+    // Calculating the process value
+    sum = (Get_k_p() * current_error) + (Get_k_i() * CalculateCummulativeError(current_error)) + (Get_k_d() * ErrorDerivativeCalculation(current_error));
+
+    // Plant process
+    sum = (sum > max) ? max : sum;
+    sum = (sum < min) ? min : sum;
+
+    old_error = current_error;
+
+    return sum;
 }
 void PID::CheckParams() {
     if (k_p <= 0 || k_i <=0 || k_d <= 0) {
