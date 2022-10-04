@@ -35,12 +35,13 @@ double PID::ErrorDerivativeCalculation(double error) {
     return ( (error - old_error) / dt);
 }
 double PID::ComputeVelocity(double process_value, double set_point) {
-    
     // Calculating the error
     double current_error = set_point - process_value;
 
     // Calculating the process value
-    sum = (Get_k_p() * current_error) + (Get_k_i() * CalculateCummulativeError(current_error)) + (Get_k_d() * ErrorDerivativeCalculation(current_error));
+    sum = (Get_k_p() * current_error) + (Get_k_i() *
+    CalculateCummulativeError(current_error)) +
+    (Get_k_d() * ErrorDerivativeCalculation(current_error));
 
     // Plant process
     sum = (sum > max) ? max : sum;
@@ -59,4 +60,3 @@ void PID::CheckParams() {
         " positive and non zero");
     }
 }
-
